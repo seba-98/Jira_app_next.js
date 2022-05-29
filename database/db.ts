@@ -24,7 +24,7 @@ export const connect=async()=>{
             console.log('usando conexion anterior');                    //UTILIZAMOS ESTA CONEXIÓN YA EN PROCESO
             return; 
         }
-        await disconnect();    //SI ESE VALOR NO ES 1 HACEMOS LA DESCONEXION
+        // await disconnect();    //SI ESE VALOR NO ES 1 HACEMOS LA DESCONEXION
     }
 
 
