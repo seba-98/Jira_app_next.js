@@ -1,4 +1,4 @@
-import { ISeedEntry, Status } from "../interfaces"
+import { ISeedEntry } from "../interfaces"
 
 interface ISeedData{
     entries:ISeedEntry[]

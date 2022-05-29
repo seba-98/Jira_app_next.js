@@ -1,5 +1,4 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { NextRequest } from "next/server";
 import { db } from "../../database";
 import { Entry } from "../../interfaces";
 import { EntryModel } from "../../models";
@@ -50,11 +49,11 @@ export const getEntry=async(req:NextApiRequest, res:NextApiResponse<Data>)=>{
     const {id}= req.query as {id:string};
 
     try {
-        db.connect();
+       await db.connect();
     
             const findEntry= await EntryModel.findById(id);
             
-        db.disconnect();
+            await db.disconnect();
             
         if(!findEntry) return res.status(400).json({message:'Entrada no encontrada'});
 
