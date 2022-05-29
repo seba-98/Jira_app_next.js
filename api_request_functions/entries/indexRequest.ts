@@ -17,6 +17,8 @@ export const getEntries=async(res:NextApiResponse<Data>)=>{
         return res.status(200).json(entries)
     }
     catch(err){
+        console.log(err);
+        
         return res.status(400).json({
             message:'failed'
         })
