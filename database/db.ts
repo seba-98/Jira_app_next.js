@@ -18,13 +18,13 @@ export const connect=async()=>{
     };
 
     if(mongoose.connections.length > 0){ //revisamos si en las conexiones de mongoose hay alguna EN PROCESO
-        mongoConnection.isConected = mongoose.connections[0].readyState; //DE SER ASI NUESTRO ESTADO SERA IGUAL
+         mongoConnection.isConected = mongoose.connections[0].readyState; //DE SER ASI NUESTRO ESTADO SERA IGUAL
                                                                         //AL VALOR DE ESTADO DE ESA CONEXION EN PROCESO
         if(mongoConnection.isConected === 1){                           //ENTONCES SI ESA CONEXION ACTIVA OSEA VALOR 1
             console.log('usando conexion anterior');                    //UTILIZAMOS ESTA CONEXIÓN YA EN PROCESO
             return; 
         }
-        disconnect();    //SI ESE VALOR NO ES 1 HACEMOS LA DESCONEXION
+        await disconnect();    //SI ESE VALOR NO ES 1 HACEMOS LA DESCONEXION
     }
 
 
