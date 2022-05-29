@@ -10,9 +10,11 @@ type Data =
 | Entry
 
 export const getEntries=async(res:NextApiResponse<Data>)=>{
+    let entries;
+    
     try{
         await db.connect();
-            const entries = await EntryModel.find().sort({createdAt:'ascending'});
+            entries = await EntryModel.find().sort({createdAt:'ascending'});
         await db.disconnect();
         return res.status(200).json(entries)
     }
