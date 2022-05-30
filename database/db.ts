@@ -24,7 +24,7 @@ export const connect=async()=>{
             console.log('usando conexion anterior');                    //UTILIZAMOS ESTA CONEXIÓN YA EN PROCESO
             return; 
         }
-        // await disconnect();    //SI ESE VALOR NO ES 1 HACEMOS LA DESCONEXION
+        await disconnect();    //SI ESE VALOR NO ES 1 HACEMOS LA DESCONEXION
     }
 
 
@@ -38,7 +38,7 @@ export const connect=async()=>{
 
 export const disconnect=async()=>{
 
-    if(process.env.NODE_ENV === 'development') return;
+    if(process.env.NODE_ENV === 'production') return;
 
     if(mongoConnection.isConected === 0)return;  //si el estado esta en 0 ya esta desconectado
 
