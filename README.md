@@ -24,4 +24,14 @@ mongodb url
 mongodb://localhost:27017/entriesdb
 `````
 
-#Para correr el proyecto en desarrollo utilizar yarn dev (es super lento), en producción es yarn start
+#Para correr el proyecto en desarrollo utilizar yarn dev (es super lento), 
+
+`````
+yarn dev
+`````
+
+#en producción es yarn start
+
+`````
+yarn start
+`````
